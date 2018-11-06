@@ -62,6 +62,7 @@ def moveTowardsCenterOfMap(body):
 
 def goToHeart(body):
     bonusTiles = body['bonusTiles']
+    you = body['you']
     if len(bonusTiles) == 1:
         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
     elif len(bonusTiles) > 1:
