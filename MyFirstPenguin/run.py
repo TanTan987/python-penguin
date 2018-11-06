@@ -86,7 +86,7 @@ def chooseAction(body):
     action = moveTowardsCenterOfMap(body)
     if len(bonusTiles) >= 1:
         for i in bonusTiles:
-            if bonusTiles[i].type == "strength":
+            if bonusTiles[i].type == strength:
                 action = goToHeart(body)
     return action
 
