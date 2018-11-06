@@ -61,11 +61,10 @@ def moveTowardsCenterOfMap(body):
     return moveTowardsPoint(body, centerPointX, centerPointY)  
 
 def goToHeart(body):
-    if bonusTiles >= 1 & bonusTiles.type == "strength"
         if bonusTiles == 1
             moveTowardsPoint(body, bonusTiles.x, bonusTiles.y)
         elif bonusTiles > 1
-        mag = 0
+            mag = 0
             for i in bonusTiles
                 magNext = findMagnitude(you.x, you.y, bonusTiles[i].x, bonusTiles[i].y)
                 if magNext < mag
@@ -80,9 +79,9 @@ def findMagnitude(x1, y1, x2, y2)
     return sqrt(X^2 + Y^2)
 
 def chooseAction(body):
-    action = goToHeart(body)
-    """ action = PASS
-    action = moveTowardsCenterOfMap(body) """
+    action = moveTowardsCenterOfMap(body)
+        if bonusTiles >= 1 & bonusTiles.type == "strength"
+            action = goToHeart(body)
     return action
 
 env = os.environ
