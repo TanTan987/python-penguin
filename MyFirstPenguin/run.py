@@ -86,12 +86,13 @@ def findMagnitude(x1, y1, x2, y2):
 
 def chooseAction(body):
     bonusTiles = body['bonusTiles']
-    action = moveTowardsCenterOfMap(body)
     if len(bonusTiles) >= 1:
         for i in bonusTiles:
             if i["type"] == "strength":
-                action = goToHeart(body)
-    return action
+                return goToHeart(body)
+    else 
+        return moveTowardsCenterOfMap(body)
+"""     return action """
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
