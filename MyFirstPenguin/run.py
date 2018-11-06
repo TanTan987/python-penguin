@@ -67,8 +67,8 @@ def goToHeart(body):
         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
     elif len(bonusTiles) > 1:
         mag = 0
-        x = math.floor(body["mapWidth"] / 2)
-        y = math.floor(body["mapHeight"] / 2)
+        x = 0
+        y = 0
         for i in bonusTiles:
             magNext = findMagnitude(you["x"], you["y"], i["x"], i["y"])
             if magNext < mag:
