@@ -86,16 +86,11 @@ def findMagnitude(x1, y1, x2, y2):
 
 def chooseAction(body):
     bonusTiles = body["bonusTiles"]
-    print("check")
-    if len(bonusTiles) >= 1:
-        for i in bonusTiles:
-            if i["type"] == "strength":
-                return goToHeart(body)
-                print("goToHeart")
-    else:
+    while len(bonusTiles) <= 0:
         return moveTowardsCenterOfMap(body)
-
-"""     return action """
+    for i in bonusTiles:
+        if i["type"] == "strength":
+            return goToHeart(body)
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
