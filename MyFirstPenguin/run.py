@@ -80,7 +80,7 @@ def findMagnitude(x1, y1, x2, y2):
 
 def chooseAction(body):
     action = moveTowardsCenterOfMap(body)
-    if len(bonusTiles) >= 1 && bonusTiles[0].type == "strength":
+    if len(bonusTiles) >= 1 & bonusTiles[0].type == "strength":
         action = goToHeart(body)
     return action
 
