@@ -77,7 +77,7 @@ def goToHeart(body):
                 y = i["y"]
         return moveTowardsPoint(body, x, y)
     else:
-        return moveTowardsCenterOfMap(body)
+        print("nope")
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
