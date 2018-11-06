@@ -86,8 +86,8 @@ def findMagnitude(x1, y1, x2, y2):
 
 def chooseAction(body):
     bonusTiles = body["bonusTiles"]
-    while len(bonusTiles) <= 0:
-        return moveTowardsCenterOfMap(body)
+ """    while len(bonusTiles) <= 0:
+        return moveTowardsCenterOfMap(body) """
     for i in bonusTiles:
         if i["type"] == "strength":
             return goToHeart(body)
