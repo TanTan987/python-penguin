@@ -61,17 +61,18 @@ def moveTowardsCenterOfMap(body):
     return moveTowardsPoint(body, centerPointX, centerPointY)  
 
 def goToHeart(body):
-        if len(bonusTiles) == 1:
-            return moveTowardsPoint(body, bonusTiles[0].x, bonusTiles[0].y)
-        elif len(bonusTiles) > 1:
-            mag = 0
-            for i in bonusTiles:
-                magNext = findMagnitude(you.x, you.y, bonusTiles[i].x, bonusTiles[i].y)
-                if magNext < mag:
-                    mag = magNext
-                    x = bonusTiles[i].x
-                    y = bonusTiles[i].y
-            return moveTowardsPoint(body, x, y)
+    bonusTiles = body['bonusTiles']
+    if len(bonusTiles) == 1:
+        return moveTowardsPoint(body, bonusTiles[0].x, bonusTiles[0].y)
+    elif len(bonusTiles) > 1:
+    mag = 0
+        for i in bonusTiles:
+            magNext = findMagnitude(you.x, you.y, bonusTiles[i].x, bonusTiles[i].y)
+            if magNext < mag:
+                mag = magNext
+                x = bonusTiles[i].x
+                y = bonusTiles[i].y
+        return moveTowardsPoint(body, x, y)
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
