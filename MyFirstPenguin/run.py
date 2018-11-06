@@ -90,7 +90,7 @@ def chooseAction(body):
         for i in bonusTiles:
             if i["type"] == "strength":
                 return goToHeart(body)
-    else 
+    else:
         return moveTowardsCenterOfMap(body)
 """     return action """
 
