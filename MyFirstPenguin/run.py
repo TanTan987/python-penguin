@@ -80,7 +80,7 @@ def goToHeart(body):
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
     Y = y2 - y1
-    return sqrt(X**2 + Y**2)
+    return math.sqrt(X**2 + Y**2)
 
 def chooseAction(body):
     bonusTiles = body['bonusTiles']
