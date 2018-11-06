@@ -73,7 +73,7 @@ def goToHeart(body):
                     y = bonusTiles[i].y
             moveTowardsPoint(body, x, y)
 
-def findMagnitude(x1, y1, x2, y2)
+def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
     Y = y2 - y1
     return sqrt(X^2 + Y^2)
