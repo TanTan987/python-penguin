@@ -65,21 +65,26 @@ def moveTowardsCenterOfMap(body):
 def goToHeart(body):
     bonusTiles = body["bonusTiles"]
     you = body["you"]
-    mag = 0
-    for i in bonusTiles["type"] == "strength":
-        x = i["x"]
-        y = i["y"]
-        return moveTowardsPoint(body, x, y)
-        
-"""     return moveTowardsPoint(body, randint(0,15), randint(0,15))
- """
+    for i in bonusTiles:
+        if i["type"] == "strength":
+            x = i["x"]
+            y = i["y"]
+            return moveTowardsPoint(body, x, y)
+        else:
+            return moveTowardsPoint(body, randint(0,15), randint(0,15))
+
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
     Y = y2 - y1
     return math.sqrt(X**2 + Y**2)
 
 def chooseAction(body):
-    return goToHeart(body)
+    bonusTiles = body["bonusTiles"]
+
+    for i in bonusTiles:
+        if i["type"] == "strength":
+            return goToHeart(body)
+    return SHOOT
 
 
 env = os.environ
