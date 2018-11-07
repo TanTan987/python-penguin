@@ -65,16 +65,12 @@ def moveTowardsCenterOfMap(body):
 def goToHeart(body):
     bonusTiles = body["bonusTiles"]
     you = body["you"]
-
-    if len(bonusTiles) == 1:
-        return PASS
-    elif len(bonusTiles) >= 2:
+    if len(bonusTiles) > 0:
         mag = 0
         for i in bonusTiles:
             x = i["x"]
             y = i["y"]
             return moveTowardsPoint(body, x, y)
-
     else:
         moveTowardsPoint(body, randint(0,15), randint(0,15))
 
