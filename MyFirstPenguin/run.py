@@ -67,9 +67,9 @@ def goToHeart(body):
     you = body["you"]
 
     if len(bonusTiles) == 1:
-        return SHOOT
-    elif len(bonusTiles) >= 2:
         return PASS
+    elif len(bonusTiles) >= 2:
+        return SHOOT
     else:
         moveTowardsPoint(body, randint(0,15), randint(0,15))
 
