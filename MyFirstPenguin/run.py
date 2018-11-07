@@ -66,10 +66,10 @@ def goToHeart(body):
 
     if len(bonusTiles) == 1:
         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
-    elif len(bonusTiles) > 1:
+    elif len(bonusTiles) >= 2:
         mag = 0
-        x = 0
-        y = 0
+        x = None
+        y = None
         for i in bonusTiles:
             magNext = findMagnitude(you["x"], you["y"], i["x"], i["y"])
             if magNext < mag:
@@ -78,7 +78,7 @@ def goToHeart(body):
                 y = i["y"]
         return moveTowardsPoint(body, x, y)
     else:
-        print("nope")
+        SHOOT
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
@@ -92,6 +92,7 @@ def chooseAction(body):
         if i["type"] == "strength":
             return goToHeart(body)
     return SHOOT
+
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
