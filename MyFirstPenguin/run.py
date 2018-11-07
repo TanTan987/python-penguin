@@ -2,6 +2,8 @@ import os
 import json
 import random
 import math
+from random import randint
+
 
 ROTATE_LEFT = "rotate-left"
 ROTATE_RIGHT = "rotate-right"
@@ -65,9 +67,12 @@ def goToHeart(body):
     you = body["you"]
 
     if len(bonusTiles) == 1:
-        return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
+        return SHOOT
+"""         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"]) """
     elif len(bonusTiles) >= 2:
-        mag = 0
+        return PASS
+
+        """ mag = 0
         x = None
         y = None
         for i in bonusTiles:
@@ -76,9 +81,9 @@ def goToHeart(body):
                 mag = magNext
                 x = i["x"]
                 y = i["y"]
-        return moveTowardsPoint(body, x, y)
+        return moveTowardsPoint(body, x, y) """
     else:
-        SHOOT
+        moveTowardsPoint(body, randint(0,15), randint(0,15))
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
