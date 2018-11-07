@@ -70,8 +70,7 @@ def goToHeart(body):
             x = i["x"]
             y = i["y"]
             return moveTowardsPoint(body, x, y)
-        else:
-            return moveTowardsPoint(body, randint(0,15), randint(0,15))
+
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
@@ -84,7 +83,7 @@ def chooseAction(body):
     for i in bonusTiles:
         if i["type"] == "strength":
             return goToHeart(body)
-    return SHOOT
+    return moveTowardsPoint(body, randint(0,15), randint(0,15))
 
 
 env = os.environ
