@@ -65,14 +65,14 @@ def moveTowardsCenterOfMap(body):
 def goToHeart(body):
     bonusTiles = body["bonusTiles"]
     you = body["you"]
-    if len(bonusTiles) > 0:
-        mag = 0
-        for i in bonusTiles:
+    mag = 0
+    for i in bonusTiles:
+        if i["type"] == "strength":
             x = i["x"]
             y = i["y"]
             return moveTowardsPoint(body, x, y)
-    else:
-        moveTowardsPoint(body, randint(0,15), randint(0,15))
+        else:
+            return moveTowardsPoint(body, randint(0,15), randint(0,15))
 
 def findMagnitude(x1, y1, x2, y2):
     X = x2 - x1
