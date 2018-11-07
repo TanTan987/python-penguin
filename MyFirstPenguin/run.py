@@ -68,20 +68,8 @@ def goToHeart(body):
 
     if len(bonusTiles) == 1:
         return SHOOT
-"""         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"]) """
     elif len(bonusTiles) >= 2:
         return PASS
-
-        """ mag = 0
-        x = None
-        y = None
-        for i in bonusTiles:
-            magNext = findMagnitude(you["x"], you["y"], i["x"], i["y"])
-            if magNext < mag:
-                mag = magNext
-                x = i["x"]
-                y = i["y"]
-        return moveTowardsPoint(body, x, y) """
     else:
         moveTowardsPoint(body, randint(0,15), randint(0,15))
 
@@ -194,3 +182,26 @@ responseBody.close()
   "suddenDeath": 10,
   "fire": []
 } """
+
+
+
+
+""" def goToHeart(body):
+    bonusTiles = body["bonusTiles"]
+    you = body["you"]
+
+    if len(bonusTiles) == 1:
+        return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
+    elif len(bonusTiles) >= 2:
+         mag = 0
+        x = None
+        y = None
+        for i in bonusTiles:
+            magNext = findMagnitude(you["x"], you["y"], i["x"], i["y"])
+            if magNext < mag:
+                mag = magNext
+                x = i["x"]
+                y = i["y"]
+        return moveTowardsPoint(body, x, y)
+    else:
+        moveTowardsPoint(body, randint(0,15), randint(0,15)) """
