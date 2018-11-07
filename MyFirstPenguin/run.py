@@ -69,7 +69,15 @@ def goToHeart(body):
     if len(bonusTiles) == 1:
         return PASS
     elif len(bonusTiles) >= 2:
-        return SHOOT
+        mag = 0
+        for i in bonusTiles:
+            magNext = findMagnitude(you["x"], you["y"], i["x"], i["y"])
+            if magNext < mag:
+                mag = magNext
+                x = i["x"]
+                y = i["y"]
+            return moveTowardsPoint(body, x, y)
+
     else:
         moveTowardsPoint(body, randint(0,15), randint(0,15))
 
