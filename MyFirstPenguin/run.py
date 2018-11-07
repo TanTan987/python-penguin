@@ -63,6 +63,7 @@ def moveTowardsCenterOfMap(body):
 def goToHeart(body):
     bonusTiles = body["bonusTiles"]
     you = body["you"]
+
     if len(bonusTiles) == 1:
         return moveTowardsPoint(body, bonusTiles[0]["x"], bonusTiles[0]["y"])
     elif len(bonusTiles) > 1:
@@ -90,6 +91,7 @@ def chooseAction(body):
     for i in bonusTiles:
         if i["type"] == "strength":
             return goToHeart(body)
+    return SHOOT
 
 env = os.environ
 req_params_query = env['REQ_PARAMS_QUERY']
